@@ -70,3 +70,12 @@ helm list -n {namespace} -a
 	1. Устанавливаем gcloud : snap install google-cloud-sdk --classic
 	2. gcloud init
 	3. Генерим конфиг для kubectl gcloud container clusters get-credentials {cluster name}  --region={region name}
+	
+	
+Создание сертификата:
+1. Cоздаем namespace cert-manager
+2. Устанавливаем чарт:
+	helm repo add jetstack https://charts.jetstack.io
+	helm repo update
+	helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.2 --set installCRDs=true
+2. Создаем Issuer: kubectl apply -f cluster-issuer.yaml -n cert-manager
