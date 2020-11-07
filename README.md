@@ -79,3 +79,7 @@ helm list -n {namespace} -a
 	helm repo update
 	helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.2 --set installCRDs=true
 2. Создаем Issuer: kubectl apply -f cluster-issuer.yaml -n cert-manager
+
+
+DUMP BD 
+kubectl exec -it stg-db-postgresql-0 -n {namespace} -- bash -c "pg_dump -U {user} {database_name}" > database.sql
