@@ -83,3 +83,13 @@ helm list -n {namespace} -a
 
 DUMP BD 
 kubectl exec -it stg-db-postgresql-0 -n {namespace} -- bash -c "pg_dump -U {user} {database_name}" > database.sql
+
+GET indexes of TABLE
+\d { table_name};
+
+DROP index
+DROP INDEX {index_name};
+
+Change column type in POSTGRES
+The USING clause specifies an expression that allows you to convert the old values to the new ones
+ALTER TABLE {table_name} ALTER COLUMN {column_name} TYPE {type} USING {column_name}::{type};
