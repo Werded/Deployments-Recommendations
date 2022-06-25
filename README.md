@@ -93,3 +93,5 @@ DROP INDEX {index_name};
 Change column type in POSTGRES
 The USING clause specifies an expression that allows you to convert the old values to the new ones
 ALTER TABLE {table_name} ALTER COLUMN {column_name} TYPE {type} USING {column_name}::{type};
+	
+GKE Private cluster Authorized Networks: https://www.youtube.com/watch?v=wlnrXBodkB4&ab_channel=CloudAdvocate (how to connect to private cluster)
